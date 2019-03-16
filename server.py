@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 import pandas as pd
 import json
+from getingredients import getBest
 recipes = pd.read_csv('recipes.csv', delimiter=',')
 seasonals = pd.read_csv('season.csv', delimiter=',')
 print(seasonals)
@@ -17,16 +18,14 @@ def index():
 	return render_template('test.html')
 
 def getrankings():
-	pass
+	return getBest()
 
 @app.route('/results', methods=['POST','GET'])
 def helloworld():
-	a = ['spaghetti','Tomato pie', '<a href=www.google.com>whut</a>']
+	a = ['spaghetti','Tomato pie', 'Something else']
 	#let a be list of recipes
-	print('bob')
-	return (render_template('results.html', recipes=json.dumps(a)))
-
+	return render_template('results.html', recipes=a)
 
 if __name__ == "__main__":
-	#pass
-	app.run()
+	print(getBest())
+	#app.run()
