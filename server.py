@@ -63,4 +63,4 @@ def helloworld():
 
 if __name__ == "__main__":
 	get5recipes()
-	app.run()
+	app.run(port=80)
