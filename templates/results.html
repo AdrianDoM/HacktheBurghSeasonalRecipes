@@ -7,9 +7,7 @@
 <body>
 
     <script language="javascript">
-            var recipes = '{{recipes|tojson}}';
-
-            document.write(recipes);
+            var recipes = {{recipes|tojson}};
 
             for (i in recipes) {
                 document.write(recipes[i]);
