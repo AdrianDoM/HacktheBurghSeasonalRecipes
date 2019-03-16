@@ -3,15 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .headings{
+        text-align:right;
+        width:15%;
+        font-weight:bold;
+        }
+        table,th, td{
+        border:2px solid black;
+        margin: 0 auto;
+        }
+    </style>
 </head>
 <body>
-
+<table align="right">
     <script language="javascript">
             var recipes = {{recipes|tojson}};
 
-            for (i in recipes) {
-                document.write(recipes[i]);
-                document.write('<br>')
+            for (index in recipes) {
+                document.write('<table>')
+                document.write('<tr> <td class=headings> Recipe: </td> <td width="90%">' + recipes[index][0]) + '</td> </tr>';
+                document.write('<tr> <td class=headings> Steps: </th> <td width="75%">' +recipes[index][1]) + '</td> </tr>';
+                document.write('<tr> <td class=headings> Ingredients: </th> <td width="75%">' +recipes[index][2]) + '</td> </tr>';
+                document.write('</table>')
+                document.write('</br>')
                 }
     </script>
 </table>
