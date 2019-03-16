@@ -7,12 +7,12 @@ def getBest():
     recipes = []
     ingredients = set()
 
-    with open('season.csv', 'rb') as csvfile:
+    with open('season.csv', 'r') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
             ingredients.add((row['Ingredient'], int(row[month])))
 
-    with open('recipes.csv', 'rb') as csvfile:
+    with open('recipes.csv', 'r') as csvfile:
         reader = csv.DictReader(csvfile)
         for idx, row in enumerate(reader):
             score = 0
