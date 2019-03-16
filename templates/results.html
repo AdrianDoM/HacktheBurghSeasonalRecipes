@@ -6,10 +6,14 @@
 </head>
 <body>
 
-<table border = 1>
     <script language="javascript">
+            var recipes = '{{recipes|tojson}}';
+
+            document.write(recipes);
+
             for (i in recipes) {
                 document.write(recipes[i]);
+                document.write('<br>')
                 }
     </script>
 </table>

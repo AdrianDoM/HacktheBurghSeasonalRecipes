@@ -23,8 +23,7 @@ def getrankings():
 def helloworld():
 	a = ['spaghetti','Tomato pie', '<a href=www.google.com>whut</a>']
 	#let a be list of recipes
-	print('bob')
-	return (render_template('results.html', recipes=json.dumps(a)))
+	return render_template('results.html', recipes=a)
 
 
 if __name__ == "__main__":
