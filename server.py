@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 import pandas as pd
 import json
+import os
 from getingredients import getBest
 recipes = pd.read_csv('recipes.csv', delimiter=',')
 seasonals = pd.read_csv('season.csv', delimiter=',')
@@ -62,5 +63,6 @@ def helloworld():
 	return render_template('results.html', recipes=a)
 
 if __name__ == "__main__":
-	get5recipes()
-	app.run(port=80)
+	# app.run(port=5000)
+	port = int(os.environ.get('PORT', 5000))
+	app.run(host='0.0.0.0', port=port)
