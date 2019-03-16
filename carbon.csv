@@ -1,20 +1,20 @@
 Name,Mean
-Vegetables,0.47
-Fruits,0.50
-Cereals,0.53
-Legumes and Pulses,0.66
-Passive greenhouse fruit and vegetable,1.02
-Tree nuts,1.42
-Milk world average,1.39
-Heated greenhouse fruit and vegetable,2.81
-Rice,2.66
-Eggs,3.39
-Fish,4.41
-Chicken,4.12
-Cream,5.32
-Pork,5.85
-Prawns,14.85
-Cheese,8.86
-Butter,11.52
-Lamb,27.91
-Beef,28.73
+zero,0.0
+vegetables,0.47
+fruits,0.50
+cereals,0.53
+legumes,0.66
+passive,1.02
+tree,1.42
+milk,1.39
+rice,2.66
+eggs,3.39
+fish,4.41
+chicken,4.12
+cream,5.32
+pork,5.85
+prawns,14.85
+cheese,8.86
+butter,11.52
+lamb,27.91
+beef,28.73
