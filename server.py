@@ -61,7 +61,7 @@ def get5recipes(month, pref1, pref2):
         return (bestrecipes)
 
 @app.route('/recipes', methods=['GET', 'POST'])
-def recipes():
+def flask_recipes():
         #for simon
         # preferencesform = request.args
         #before
