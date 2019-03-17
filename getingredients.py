@@ -36,5 +36,5 @@ def getBest(month, pref1=None, pref2=None):
     recipes.sort(key=(lambda x: x[2]), reverse=True)
     return recipes
 
-print(getBest('Oct'))
+# print(getBest('Oct'))
 
