@@ -85,7 +85,7 @@ def flask_recipes():
         #print(month, preferencesform['pref1'], preferencesform['pref2'])
         #a = get5recipes(month, preferencesform['pref1'], preferencesform['pref2'])
         #simon
-        a = getRecipe(1)#int(request.args.get('index')))
+        a = getRecipe(int(request.args.get('index')))
         #print(request.args.get('index'))
         #let a be list of recipes
         return render_template('results.html', recipes=a)
