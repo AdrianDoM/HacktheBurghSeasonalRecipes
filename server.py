@@ -60,7 +60,7 @@ def get5recipes(month, pref1, pref2):
                 bestrecipes += [currRecp]
         return (bestrecipes)
 
-@app.route('/recipes', methods=['GET', 'POST'])
+@app.route('/recipes', methods=['GET'])
 def flask_recipes():
         #for simon
         # preferencesform = request.args
@@ -118,6 +118,12 @@ def helloworld():
         # a = getRecipe(int(request.args.get('index')))
         #let a be list of recipes
         return render_template('results.html', recipes=a)
+
+@app.route('/results-get', methods=['GET'])
+def results_get():
+    month = request.args.get('month')
+    a = get5recipes(month, "", "")
+    return render_template('results.html', recipes=a)
 
 @app.route('/titles')
 def titles():
