@@ -119,6 +119,11 @@ def helloworld():
         #let a be list of recipes
         return render_template('results.html', recipes=a)
 
+@app.route('/results-get', methods=['GET'])
+def results-get():
+    get5recipes("Mar", "", "")
+    return render_template('result.html', recipes=a)
+
 @app.route('/titles')
 def titles():
         mystr = ""
