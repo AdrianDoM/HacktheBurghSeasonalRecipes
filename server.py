@@ -73,6 +73,14 @@ def helloworld():
 	#let a be list of recipes
 	return render_template('results.html', recipes=a)
 
+@app.route('/titles')
+def titles():
+
+	mystr = ""
+	for i in recipes['Title']:
+		mystr = mystr + str(i) + ','
+	return mystr
+
 def getRecipe(num):
 	i = num
 	currRecp = []
