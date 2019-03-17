@@ -60,7 +60,7 @@ def get5recipes(month, pref1, pref2):
                 bestrecipes += [currRecp]
         return (bestrecipes)
 
-@app.route('/recipes', methods=['GET', 'POST'])
+@app.route('/recipes', methods=['GET'])
 def flask_recipes():
         #for simon
         # preferencesform = request.args
