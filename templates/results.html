@@ -2,19 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Recipes</title>
     <style>
-        .headings{
-        text-align:right;
-        width:15%;
-        font-weight:bold;
+        body {
+          font-family: Arial, Helvetica, sans-serif;
         }
-        table,th, td{
-        border:2px solid black;
-        margin: 0 auto;
-        }
-        td {
 
+        table {
+          max-width: 60em;
+          margin:auto;
+          border-collapse: collapse;
+        }
+
+        td {
+            padding: 0.7em 1em;
+        }
+
+        tr:nth-child(1) td:last-child {
+          background: #006036;
+          border-radius: 2em 2em 0 0;
+          color: white;
+          font-weight: bold;
+          font-variant-caps: all-small-caps;
+          font-size: 1.5em;
+          text-align: center;
+        }
+        tr:nth-child(2) td:last-child {
+          background: #8ed081;
+        }
+        tr:nth-child(3) td:last-child {
+          background: #dce2aa;
+        }
+        tr:nth-child(4) td:last-child {
+          background: #b4d2ba;
+          border-radius: 0 0 2em 2em;
+        }
+
+        .headings {
+          font-variant-caps: all-petite-caps;
+          text-align:right;
+          width:15%;
+          font-weight:bold;
+          font-size: 1.3em;
+          background: transparent;
+        }
     </style>
 </head>
 <body style="background-image: url('static/images/background.jpg'>
@@ -24,10 +55,10 @@
 
             for (index in recipes) {
                 document.write('<table>')
-                document.write('<tr> <td class=headings> Recipe: </td> <td width="90%">' + recipes[index][0]) + '</td> </tr>';
-                document.write('<tr> <td class=headings> Steps: </th> <td width="75%">' +recipes[index][1]) + '</td> </tr>';
-                document.write('<tr> <td class=headings> Ingredients: </th> <td width="75%">' +recipes[index][2]) + '</td> </tr>';
-                document.write('<tr> <td class=headings> Carbon footprint: </th> <td width="75%">' +recipes[index][3]) + '</td> </tr>';
+                document.write('<tr> <td class=headings> Recipe </td> <td width="90%">' + recipes[index][0]) + '</td> </tr>';
+                document.write('<tr> <td class=headings> Steps </th> <td width="75%">' +recipes[index][1]) + '</td> </tr>';
+                document.write('<tr> <td class=headings> Ingredients </th> <td width="75%">' +recipes[index][2]) + '</td> </tr>';
+                document.write('<tr> <td class=headings> Carbon footprint </th> <td width="75%">' +recipes[index][3]) + '</td> </tr>';
                 document.write('</table>')
                 document.write('</br>')
                 }
