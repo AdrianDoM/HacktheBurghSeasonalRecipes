@@ -121,7 +121,6 @@ def helloworld():
 
 @app.route('/titles')
 def titles():
-
         mystr = ""
         for i in recipes['Title']:
                 mystr = mystr + str(i) + ','
