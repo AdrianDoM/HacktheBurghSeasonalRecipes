@@ -121,7 +121,8 @@ def helloworld():
 
 @app.route('/results-get', methods=['GET'])
 def results-get():
-    get5recipes("Mar", "", "")
+    month = request.args.get('month')
+    get5recipes(month, "", "")
     return render_template('result.html', recipes=a)
 
 @app.route('/titles')
