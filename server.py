@@ -3,6 +3,8 @@ import pandas as pd
 import json
 import os
 from getingredients import getBest
+import datetime
+import calendar
 recipes = pd.read_csv('recipes.csv', delimiter=',')
 seasonals = pd.read_csv('season.csv', delimiter=',')
 #print(seasonals)
@@ -53,13 +55,21 @@ def get5recipes(month, pref1, pref2):
 					curringred = ''
 		# print(ingredients)
 		currRecp += [ingredients]
+		# print(i[3])
+		currRecp += [str(i[3].__round__(3)) + '(KG)']
 		bestrecipes += [currRecp]
 	return (bestrecipes)
 
 
-@app.route('/results', methods=['GET'])
+@app.route('/results', methods=['GET', 'POST'])
 def helloworld():
-	preferencesform = request.args
+	#for simon
+	# preferencesform = request.args
+	#before
+	preferencesform = request.form
+	for i in preferencesform.keys():
+		print(i)
+
 	preference = []
 	#for i in preferencesform:
 	#	preference += [preferencesform.get(i)]
@@ -68,8 +78,15 @@ def helloworld():
 	#preference += request.args.get('pref3')
 	#preference += request.args.get('pref4')
 	#print(preference)
-	#a = get5recipes("Jan", "apple", "apple")
-	a = getRecipe(int(request.args.get('index')))
+	#before
+	if preferencesform['month'] == 'Current':
+		month = calendar.month_abbr[datetime.datetime.now().month]
+	else:
+		month = preferencesform['month']
+	print(month, preferencesform['pref1'], preferencesform['pref2'])
+	a = get5recipes(month, preferencesform['pref1'], preferencesform['pref2'])
+	#simon
+	# a = getRecipe(int(request.args.get('index')))
 	#let a be list of recipes
 	return render_template('results.html', recipes=a)
 
@@ -117,7 +134,7 @@ def getRecipe(num):
 	return [currRecp]
 
 if __name__ == "__main__":
-	print(getRecipe(1))
+	# print(getRecipe(1))
 	# app.run(port=5000)
 	#port = int(os.environ.get('PORT', 5000))
 	app.run()

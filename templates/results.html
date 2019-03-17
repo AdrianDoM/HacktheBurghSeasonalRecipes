@@ -13,10 +13,12 @@
         border:2px solid black;
         margin: 0 auto;
         }
+        td {
+
     </style>
 </head>
-<body>
-<table align="right">
+<body style="background-image: url('static/images/background.jpg'>
+<table cellpadding="10">
     <script language="javascript">
             var recipes = {{recipes|tojson}};
 
@@ -25,6 +27,7 @@
                 document.write('<tr> <td class=headings> Recipe: </td> <td width="90%">' + recipes[index][0]) + '</td> </tr>';
                 document.write('<tr> <td class=headings> Steps: </th> <td width="75%">' +recipes[index][1]) + '</td> </tr>';
                 document.write('<tr> <td class=headings> Ingredients: </th> <td width="75%">' +recipes[index][2]) + '</td> </tr>';
+                document.write('<tr> <td class=headings> Carbon footprint: </th> <td width="75%">' +recipes[index][3]) + '</td> </tr>';
                 document.write('</table>')
                 document.write('</br>')
                 }

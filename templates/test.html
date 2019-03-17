@@ -3,19 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        td {
+            text-align:center;
+        }
+    </style>
 </head>
-<body>
-<h1 align="middle">Recipe recommender</h1>
-<form action="/results" method="get">
-    <table align="center">
+<body style="background-image: url('static/images/background.jpg';)">
+<div style="background-color:white; padding=0pt;"><h1 align="middle">Recipe recommender</h1></div>
+<form action="/results" method="post">
+    <table align="center" bgcolor="#d3d3d3" cellpadding="15">
         <tr>
-            <select name="month">
-
+            <td colspan="2" bgcolor="#98fb98"><h3 align="centre">Choose your month/preferences!</h3></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+            <p>Month:</p><select name="month">
+                <option value="Current">Current</option>
+                  <option value="Jan">Jan</option>
+  2 <option value="Feb">Feb</option>
+  3 <option value="Mar">Mar</option>
+  4 <option value="Apr">Apr</option>
+  5 <option value="May">May</option>
+  6 <option value="Jun">Jun</option>
+  7 <option value="Jul">Jul</option>
+  8 <option value="Aug">Aug</option>
+  9 <option value="Sep">Sep</option>
+ 10 <option value="Oct">Oct</option>
+ 11 <option value="Nov">Nov</option>
+ 12 <option value="Dec">Dec</option>
+~
             </select>
+        </td>
         </tr>
         <tr>
             <td>
                 <p>1st</p><select name="pref1">
+                <option value="none">None</option>
   <option value="apple">Apple</option>
 <option value="apricot">Apricot</option>
 <option value="asparagus">Asparagus</option>
@@ -130,6 +154,7 @@
             </td>
             <td>
             <p>2nd</p><select name="pref2">
+                <option value="none">None</option>
 <option value="apple">Apple</option>
 <option value="apricot">Apricot</option>
 <option value="asparagus">Asparagus</option>
@@ -243,7 +268,8 @@
     </tr>
         <tr>
             <td>
-                <p>1st</p><select name="pref3">
+                <p>3rd</p><select name="pref3">
+                <option value="none">None</option>
   <option value="apple">Apple</option>
 <option value="apricot">Apricot</option>
 <option value="asparagus">Asparagus</option>
@@ -357,7 +383,8 @@
     </select>
             </td>
             <td>
-            <p>2nd</p><select name="pref4">
+            <p>4th</p><select name="pref4">
+                <option value="none">None</option>
 <option value="apple">Apple</option>
 <option value="apricot">Apricot</option>
 <option value="asparagus">Asparagus</option>
@@ -469,8 +496,9 @@
     </select>
             </td>
         </tr>
+        <tr><td><br></td></tr>
         <tr>
-        <td ><button type="submit" value="Submit">Get recipes</button></td>
+        <td colspan="2" align="center"><button type="submit" value="Submit">Get recipes</button></td>
         </tr>
 
 
