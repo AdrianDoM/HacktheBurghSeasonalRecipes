@@ -3,11 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Recipes</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato|Pacifico" rel="stylesheet">
     <style>
         body {
-          font-family: Arial, Helvetica, sans-serif;
+          font-family: 'Lato', sans-serif;
+          background-image: url(https://wallpaper.wiki/wp-content/uploads/2017/05/Download-free-ivy-on-wood-wallpapers-HD.jpg);
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
         }
-
+        
+        h1 {
+          text-align: center;
+          font-size: 2.2em;
+          font-family: 'Pacifico', serif;
+          margin: 1.3em 0  0;
+          color: #00331d;
+        }
         table {
           max-width: 60em;
           margin:auto;
@@ -15,10 +27,18 @@
         }
 
         td {
-            padding: 0.7em 1em;
+          padding: 0.7em 1em;
         }
 
-        tr:nth-child(1) td:last-child {
+        tr td:first-child {
+          padding-left: 0;
+        }
+
+        tr td:last-child {
+          min-width: 10em;
+        }
+
+        tr.recipe td:last-child {
           background: #006036;
           border-radius: 2em 2em 0 0;
           color: white;
@@ -27,15 +47,18 @@
           font-size: 1.5em;
           text-align: center;
         }
-        tr:nth-child(2) td:last-child {
+        tr.steps td:last-child {
           background: #8ed081;
         }
-        tr:nth-child(3) td:last-child {
+        tr.ingredients td:last-child {
           background: #dce2aa;
         }
-        tr:nth-child(4) td:last-child {
+        tr.footprint td:last-child {
           background: #b4d2ba;
           border-radius: 0 0 2em 2em;
+        }
+        tr.empty {
+          height: 1.5em;
         }
 
         .headings {
@@ -48,19 +71,21 @@
         }
     </style>
 </head>
-<body style="background-image: url('static/images/background.jpg'>
-<table cellpadding="10">
+<body>
+<table>
+    <tr>
+        <td/>
+        <td><h1>We found these recipes for you</h1></td>
+    </tr>
     <script language="javascript">
             var recipes = {{recipes|tojson}};
 
             for (index in recipes) {
-                document.write('<table>')
-                document.write('<tr> <td class=headings> Recipe </td> <td width="90%">' + recipes[index][0]) + '</td> </tr>';
-                document.write('<tr> <td class=headings> Steps </th> <td width="75%">' +recipes[index][1]) + '</td> </tr>';
-                document.write('<tr> <td class=headings> Ingredients </th> <td width="75%">' +recipes[index][2]) + '</td> </tr>';
-                document.write('<tr> <td class=headings> Carbon footprint </th> <td width="75%">' +recipes[index][3]) + '</td> </tr>';
-                document.write('</table>')
-                document.write('</br>')
+                document.write('<tr class="recipe"> <td class=headings> Recipe </td> <td width="90%">' + recipes[index][0]) + '</td> </tr>';
+                document.write('<tr class="steps"> <td class=headings> Steps </th> <td width="75%">' +recipes[index][1]) + '</td> </tr>';
+                document.write('<tr class="ingredients"> <td class=headings> Ingredients </th> <td width="75%">' +recipes[index][2]) + '</td> </tr>';
+                document.write('<tr class="footprint"> <td class=headings> Carbon footprint </th> <td width="75%">' +recipes[index][3]) + '</td> </tr>';
+                document.write('<tr class="empty">')
                 }
     </script>
 </table>

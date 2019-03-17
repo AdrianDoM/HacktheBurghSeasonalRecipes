@@ -3,506 +3,532 @@
 <head>
     <meta charset="UTF-8">
     <title>Recipe recommender</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato|Pacifico" rel="stylesheet">
     <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            background-image: url(https://wallpaper.wiki/wp-content/uploads/2017/05/Download-free-ivy-on-wood-wallpapers-HD.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        table {
+            border-spacing: 1.5em;
+        }
+
         td {
             text-align:center;
+            padding: 
+        }
+
+        h1 {
+            margin: 1.8em 0 0 0;
+            text-align: center;
+            font-family: 'Pacifico', serif;
+            font-size: 3em;
+            color: #00331d;
+        }
+
+        .heading {
+            background: #006036;
+            padding: 0 1em;
+            border-radius: 2em;
+            color: white;
+        }
+
+        table {
+            margin: auto;
         }
     </style>
 </head>
-<body style="background-image: url('static/images/background.jpg';)">
-<div style="background-color:white; padding=0pt;"><h1 align="middle">Recipe recommender</h1></div>
+<body>
+<h1>Recipe recommender</h1>
 <form action="/results" method="post">
-    <table align="center" bgcolor="#d3d3d3" cellpadding="15">
-        <tr>
-            <td colspan="2" bgcolor="#98fb98"><h3 align="centre">Choose your month/preferences!</h3></td>
-        </tr>
-        <tr>
-            <td colspan="2">
-            <p>Month:</p><select name="month">
+<table><tbody>
+    <tr>
+        <td class="heading"><h3>Choose a month</h3></td>
+        <td>
+            <select name="month">
                 <option value="Current">Current</option>
-                  <option value="Jan">Jan</option>
-  2 <option value="Feb">Feb</option>
-  3 <option value="Mar">Mar</option>
-  4 <option value="Apr">Apr</option>
-  5 <option value="May">May</option>
-  6 <option value="Jun">Jun</option>
-  7 <option value="Jul">Jul</option>
-  8 <option value="Aug">Aug</option>
-  9 <option value="Sep">Sep</option>
- 10 <option value="Oct">Oct</option>
- 11 <option value="Nov">Nov</option>
- 12 <option value="Dec">Dec</option>
-~
+                <option value="Jan">Jan</option>
+                <option value="Feb">Feb</option>
+                <option value="Mar">Mar</option>
+                <option value="Apr">Apr</option>
+                <option value="May">May</option>
+                <option value="Jun">Jun</option>
+                <option value="Jul">Jul</option>
+                <option value="Aug">Aug</option>
+                <option value="Sep">Sep</option>
+                <option value="Oct">Oct</option>
+                <option value="Nov">Nov</option>
+                <option value="Dec">Dec</option>
             </select>
         </td>
-        </tr>
-        <tr>
-            <td>
-                <p>1st</p><select name="pref1">
-                <option value="none">None</option>
-  <option value="apple">Apple</option>
-<option value="apricot">Apricot</option>
-<option value="asparagus">Asparagus</option>
-<option value="aubergine">Aubergine</option>
-<option value="banana">Banana</option>
-<option value="basil">Basil</option>
-<option value="beef">Beef</option>
-<option value="beetroot">Beetroot</option>
-<option value="blackberry">Blackberry</option>
-<option value="blackcurrants">Blackcurrants</option>
-<option value="bramley apple">Apple</option>
-<option value="broad bean">Bean</option>
-<option value="broccoli">Broccoli</option>
-<option value="brussels sprouts">Sprouts</option>
-<option value="cabbage">Cabbage</option>
-<option value="carrot">Carrot</option>
-<option value="cauliflower">Cauliflower</option>
-<option value="cavolo nero">Nero</option>
-<option value="celeriac">Celeriac</option>
-<option value="celery">Celery</option>
-<option value="cherry">Cherry</option>
-<option value="chervil">Chervil</option>
-<option value="chestnut">Chestnut</option>
-<option value="chicken">Chicken</option>
-<option value="chicory">Chicory</option>
-<option value="clementine">Clementine</option>
-<option value="cod">Cod</option>
-<option value="courgette">Courgette</option>
-<option value="courgette flower">Flower</option>
-<option value="crab">Crab</option>
-<option value="crab apple">Apple</option>
-<option value="cranberry">Cranberry</option>
-<option value="damson">Damson</option>
-<option value="date">Date</option>
-<option value="duck">Duck</option>
-<option value="elderberries">Elderberries</option>
-<option value="fennel bulb">Bulb</option>
-<option value="fig">Fig</option>
-<option value="garlic">Garlic</option>
-<option value="globe artichoke">Artichoke</option>
-<option value="goose">Goose</option>
-<option value="gooseberry">Gooseberry</option>
-<option value="grapefruit">Grapefruit</option>
-<option value="grouse">Grouse</option>
-<option value="guinea fowl">Fowl</option>
-<option value="halibut">Halibut</option>
-<option value="jerusalem artichoke">Artichoke</option>
-<option value="kale">Kale</option>
-<option value="kipper">Kipper</option>
-<option value="kohlrabi">Kohlrabi</option>
-<option value="lamb">Lamb</option>
-<option value="lamb's lettuce">Lettuce</option>
-<option value="leek">Leek</option>
-<option value="lemon">Lemon</option>
-<option value="lettuce">Lettuce</option>
-<option value="loganberry">Loganberry</option>
-<option value="mackerel">Mackerel</option>
-<option value="mangetout">Mangetout</option>
-<option value="marrow">Marrow</option>
-<option value="mint">Mint</option>
-<option value="mussels">Mussels</option>
-<option value="nectarine">Nectarine</option>
-<option value="new potatoes">Potatoes</option>
-<option value="onion">Onion</option>
-<option value="orange">Orange</option>
-<option value="oyster">Oyster</option>
-<option value="pak choi">Choi</option>
-<option value="parsnip">Parsnip</option>
-<option value="peach">Peach</option>
-<option value="pear">Pear</option>
-<option value="peas">Peas</option>
-<option value="pepper">Pepper</option>
-<option value="plum">Plum</option>
-<option value="pomegranate">Pomegranate</option>
-<option value="pork">Pork</option>
-<option value="potato">Potato</option>
-<option value="pumpkin">Pumpkin</option>
-<option value="purple sprouting broccoli">Broccoli</option>
-<option value="quince">Quince</option>
-<option value="radicchio">Radicchio</option>
-<option value="radish">Radish</option>
-<option value="raspberry">Raspberry</option>
-<option value="redcurrant">Redcurrant</option>
-<option value="rhubarb">Rhubarb</option>
-<option value="runner bean">Bean</option>
-<option value="salmon">Salmon</option>
-<option value="salsify">Salsify</option>
-<option value="samphire">Samphire</option>
-<option value="sorrel">Sorrel</option>
-<option value="spinach">Spinach</option>
-<option value="spring greens">Greens</option>
-<option value="spring lamb">Lamb</option>
-<option value="spring onion">Onion</option>
-<option value="strawberry">Strawberry</option>
-<option value="swede">Swede</option>
-<option value="sweet potato">Potato</option>
-<option value="sweetcorn">Sweetcorn</option>
-<option value="swiss chard">Chard</option>
-<option value="tayberry">Tayberry</option>
-<option value="tomato">Tomato</option>
-<option value="tuna">Tuna</option>
-<option value="turkey">Turkey</option>
-<option value="turnip">Turnip</option>
-<option value="venison">Venison</option>
-<option value="watercress">Watercress</option>
-<option value="watermelon">Watermelon</option>
-<option value="whiting">Whiting</option>
-
-
-
-    </select>
-            </td>
-            <td>
-            <p>2nd</p><select name="pref2">
-                <option value="none">None</option>
-<option value="apple">Apple</option>
-<option value="apricot">Apricot</option>
-<option value="asparagus">Asparagus</option>
-<option value="aubergine">Aubergine</option>
-<option value="banana">Banana</option>
-<option value="basil">Basil</option>
-<option value="beef">Beef</option>
-<option value="beetroot">Beetroot</option>
-<option value="blackberry">Blackberry</option>
-<option value="blackcurrants">Blackcurrants</option>
-<option value="bramley apple">Apple</option>
-<option value="broad bean">Bean</option>
-<option value="broccoli">Broccoli</option>
-<option value="brussels sprouts">Sprouts</option>
-<option value="cabbage">Cabbage</option>
-<option value="carrot">Carrot</option>
-<option value="cauliflower">Cauliflower</option>
-<option value="cavolo nero">Nero</option>
-<option value="celeriac">Celeriac</option>
-<option value="celery">Celery</option>
-<option value="cherry">Cherry</option>
-<option value="chervil">Chervil</option>
-<option value="chestnut">Chestnut</option>
-<option value="chicken">Chicken</option>
-<option value="chicory">Chicory</option>
-<option value="clementine">Clementine</option>
-<option value="cod">Cod</option>
-<option value="courgette">Courgette</option>
-<option value="courgette flower">Flower</option>
-<option value="crab">Crab</option>
-<option value="crab apple">Apple</option>
-<option value="cranberry">Cranberry</option>
-<option value="damson">Damson</option>
-<option value="date">Date</option>
-<option value="duck">Duck</option>
-<option value="elderberries">Elderberries</option>
-<option value="fennel bulb">Bulb</option>
-<option value="fig">Fig</option>
-<option value="garlic">Garlic</option>
-<option value="globe artichoke">Artichoke</option>
-<option value="goose">Goose</option>
-<option value="gooseberry">Gooseberry</option>
-<option value="grapefruit">Grapefruit</option>
-<option value="grouse">Grouse</option>
-<option value="guinea fowl">Fowl</option>
-<option value="halibut">Halibut</option>
-<option value="jerusalem artichoke">Artichoke</option>
-<option value="kale">Kale</option>
-<option value="kipper">Kipper</option>
-<option value="kohlrabi">Kohlrabi</option>
-<option value="lamb">Lamb</option>
-<option value="lamb's lettuce">Lettuce</option>
-<option value="leek">Leek</option>
-<option value="lemon">Lemon</option>
-<option value="lettuce">Lettuce</option>
-<option value="loganberry">Loganberry</option>
-<option value="mackerel">Mackerel</option>
-<option value="mangetout">Mangetout</option>
-<option value="marrow">Marrow</option>
-<option value="mint">Mint</option>
-<option value="mussels">Mussels</option>
-<option value="nectarine">Nectarine</option>
-<option value="new potatoes">Potatoes</option>
-<option value="onion">Onion</option>
-<option value="orange">Orange</option>
-<option value="oyster">Oyster</option>
-<option value="pak choi">Choi</option>
-<option value="parsnip">Parsnip</option>
-<option value="peach">Peach</option>
-<option value="pear">Pear</option>
-<option value="peas">Peas</option>
-<option value="pepper">Pepper</option>
-<option value="plum">Plum</option>
-<option value="pomegranate">Pomegranate</option>
-<option value="pork">Pork</option>
-<option value="potato">Potato</option>
-<option value="pumpkin">Pumpkin</option>
-<option value="purple sprouting broccoli">Broccoli</option>
-<option value="quince">Quince</option>
-<option value="radicchio">Radicchio</option>
-<option value="radish">Radish</option>
-<option value="raspberry">Raspberry</option>
-<option value="redcurrant">Redcurrant</option>
-<option value="rhubarb">Rhubarb</option>
-<option value="runner bean">Bean</option>
-<option value="salmon">Salmon</option>
-<option value="salsify">Salsify</option>
-<option value="samphire">Samphire</option>
-<option value="sorrel">Sorrel</option>
-<option value="spinach">Spinach</option>
-<option value="spring greens">Greens</option>
-<option value="spring lamb">Lamb</option>
-<option value="spring onion">Onion</option>
-<option value="strawberry">Strawberry</option>
-<option value="swede">Swede</option>
-<option value="sweet potato">Potato</option>
-<option value="sweetcorn">Sweetcorn</option>
-<option value="swiss chard">Chard</option>
-<option value="tayberry">Tayberry</option>
-<option value="tomato">Tomato</option>
-<option value="tuna">Tuna</option>
-<option value="turkey">Turkey</option>
-<option value="turnip">Turnip</option>
-<option value="venison">Venison</option>
-<option value="watercress">Watercress</option>
-<option value="watermelon">Watermelon</option>
-<option value="whiting">Whiting</option>
-
-    </select>
-    </td>
     </tr>
-        <tr>
-            <td>
-                <p>3rd</p><select name="pref3">
-                <option value="none">None</option>
-  <option value="apple">Apple</option>
-<option value="apricot">Apricot</option>
-<option value="asparagus">Asparagus</option>
-<option value="aubergine">Aubergine</option>
-<option value="banana">Banana</option>
-<option value="basil">Basil</option>
-<option value="beef">Beef</option>
-<option value="beetroot">Beetroot</option>
-<option value="blackberry">Blackberry</option>
-<option value="blackcurrants">Blackcurrants</option>
-<option value="bramley apple">Apple</option>
-<option value="broad bean">Bean</option>
-<option value="broccoli">Broccoli</option>
-<option value="brussels sprouts">Sprouts</option>
-<option value="cabbage">Cabbage</option>
-<option value="carrot">Carrot</option>
-<option value="cauliflower">Cauliflower</option>
-<option value="cavolo nero">Nero</option>
-<option value="celeriac">Celeriac</option>
-<option value="celery">Celery</option>
-<option value="cherry">Cherry</option>
-<option value="chervil">Chervil</option>
-<option value="chestnut">Chestnut</option>
-<option value="chicken">Chicken</option>
-<option value="chicory">Chicory</option>
-<option value="clementine">Clementine</option>
-<option value="cod">Cod</option>
-<option value="courgette">Courgette</option>
-<option value="courgette flower">Flower</option>
-<option value="crab">Crab</option>
-<option value="crab apple">Apple</option>
-<option value="cranberry">Cranberry</option>
-<option value="damson">Damson</option>
-<option value="date">Date</option>
-<option value="duck">Duck</option>
-<option value="elderberries">Elderberries</option>
-<option value="fennel bulb">Bulb</option>
-<option value="fig">Fig</option>
-<option value="garlic">Garlic</option>
-<option value="globe artichoke">Artichoke</option>
-<option value="goose">Goose</option>
-<option value="gooseberry">Gooseberry</option>
-<option value="grapefruit">Grapefruit</option>
-<option value="grouse">Grouse</option>
-<option value="guinea fowl">Fowl</option>
-<option value="halibut">Halibut</option>
-<option value="jerusalem artichoke">Artichoke</option>
-<option value="kale">Kale</option>
-<option value="kipper">Kipper</option>
-<option value="kohlrabi">Kohlrabi</option>
-<option value="lamb">Lamb</option>
-<option value="lamb's lettuce">Lettuce</option>
-<option value="leek">Leek</option>
-<option value="lemon">Lemon</option>
-<option value="lettuce">Lettuce</option>
-<option value="loganberry">Loganberry</option>
-<option value="mackerel">Mackerel</option>
-<option value="mangetout">Mangetout</option>
-<option value="marrow">Marrow</option>
-<option value="mint">Mint</option>
-<option value="mussels">Mussels</option>
-<option value="nectarine">Nectarine</option>
-<option value="new potatoes">Potatoes</option>
-<option value="onion">Onion</option>
-<option value="orange">Orange</option>
-<option value="oyster">Oyster</option>
-<option value="pak choi">Choi</option>
-<option value="parsnip">Parsnip</option>
-<option value="peach">Peach</option>
-<option value="pear">Pear</option>
-<option value="peas">Peas</option>
-<option value="pepper">Pepper</option>
-<option value="plum">Plum</option>
-<option value="pomegranate">Pomegranate</option>
-<option value="pork">Pork</option>
-<option value="potato">Potato</option>
-<option value="pumpkin">Pumpkin</option>
-<option value="purple sprouting broccoli">Broccoli</option>
-<option value="quince">Quince</option>
-<option value="radicchio">Radicchio</option>
-<option value="radish">Radish</option>
-<option value="raspberry">Raspberry</option>
-<option value="redcurrant">Redcurrant</option>
-<option value="rhubarb">Rhubarb</option>
-<option value="runner bean">Bean</option>
-<option value="salmon">Salmon</option>
-<option value="salsify">Salsify</option>
-<option value="samphire">Samphire</option>
-<option value="sorrel">Sorrel</option>
-<option value="spinach">Spinach</option>
-<option value="spring greens">Greens</option>
-<option value="spring lamb">Lamb</option>
-<option value="spring onion">Onion</option>
-<option value="strawberry">Strawberry</option>
-<option value="swede">Swede</option>
-<option value="sweet potato">Potato</option>
-<option value="sweetcorn">Sweetcorn</option>
-<option value="swiss chard">Chard</option>
-<option value="tayberry">Tayberry</option>
-<option value="tomato">Tomato</option>
-<option value="tuna">Tuna</option>
-<option value="turkey">Turkey</option>
-<option value="turnip">Turnip</option>
-<option value="venison">Venison</option>
-<option value="watercress">Watercress</option>
-<option value="watermelon">Watermelon</option>
-<option value="whiting">Whiting</option>
-
-
-
-    </select>
-            </td>
-            <td>
-            <p>4th</p><select name="pref4">
-                <option value="none">None</option>
-<option value="apple">Apple</option>
-<option value="apricot">Apricot</option>
-<option value="asparagus">Asparagus</option>
-<option value="aubergine">Aubergine</option>
-<option value="banana">Banana</option>
-<option value="basil">Basil</option>
-<option value="beef">Beef</option>
-<option value="beetroot">Beetroot</option>
-<option value="blackberry">Blackberry</option>
-<option value="blackcurrants">Blackcurrants</option>
-<option value="bramley apple">Apple</option>
-<option value="broad bean">Bean</option>
-<option value="broccoli">Broccoli</option>
-<option value="brussels sprouts">Sprouts</option>
-<option value="cabbage">Cabbage</option>
-<option value="carrot">Carrot</option>
-<option value="cauliflower">Cauliflower</option>
-<option value="cavolo nero">Nero</option>
-<option value="celeriac">Celeriac</option>
-<option value="celery">Celery</option>
-<option value="cherry">Cherry</option>
-<option value="chervil">Chervil</option>
-<option value="chestnut">Chestnut</option>
-<option value="chicken">Chicken</option>
-<option value="chicory">Chicory</option>
-<option value="clementine">Clementine</option>
-<option value="cod">Cod</option>
-<option value="courgette">Courgette</option>
-<option value="courgette flower">Flower</option>
-<option value="crab">Crab</option>
-<option value="crab apple">Apple</option>
-<option value="cranberry">Cranberry</option>
-<option value="damson">Damson</option>
-<option value="date">Date</option>
-<option value="duck">Duck</option>
-<option value="elderberries">Elderberries</option>
-<option value="fennel bulb">Bulb</option>
-<option value="fig">Fig</option>
-<option value="garlic">Garlic</option>
-<option value="globe artichoke">Artichoke</option>
-<option value="goose">Goose</option>
-<option value="gooseberry">Gooseberry</option>
-<option value="grapefruit">Grapefruit</option>
-<option value="grouse">Grouse</option>
-<option value="guinea fowl">Fowl</option>
-<option value="halibut">Halibut</option>
-<option value="jerusalem artichoke">Artichoke</option>
-<option value="kale">Kale</option>
-<option value="kipper">Kipper</option>
-<option value="kohlrabi">Kohlrabi</option>
-<option value="lamb">Lamb</option>
-<option value="lamb's lettuce">Lettuce</option>
-<option value="leek">Leek</option>
-<option value="lemon">Lemon</option>
-<option value="lettuce">Lettuce</option>
-<option value="loganberry">Loganberry</option>
-<option value="mackerel">Mackerel</option>
-<option value="mangetout">Mangetout</option>
-<option value="marrow">Marrow</option>
-<option value="mint">Mint</option>
-<option value="mussels">Mussels</option>
-<option value="nectarine">Nectarine</option>
-<option value="new potatoes">Potatoes</option>
-<option value="onion">Onion</option>
-<option value="orange">Orange</option>
-<option value="oyster">Oyster</option>
-<option value="pak choi">Choi</option>
-<option value="parsnip">Parsnip</option>
-<option value="peach">Peach</option>
-<option value="pear">Pear</option>
-<option value="peas">Peas</option>
-<option value="pepper">Pepper</option>
-<option value="plum">Plum</option>
-<option value="pomegranate">Pomegranate</option>
-<option value="pork">Pork</option>
-<option value="potato">Potato</option>
-<option value="pumpkin">Pumpkin</option>
-<option value="purple sprouting broccoli">Broccoli</option>
-<option value="quince">Quince</option>
-<option value="radicchio">Radicchio</option>
-<option value="radish">Radish</option>
-<option value="raspberry">Raspberry</option>
-<option value="redcurrant">Redcurrant</option>
-<option value="rhubarb">Rhubarb</option>
-<option value="runner bean">Bean</option>
-<option value="salmon">Salmon</option>
-<option value="salsify">Salsify</option>
-<option value="samphire">Samphire</option>
-<option value="sorrel">Sorrel</option>
-<option value="spinach">Spinach</option>
-<option value="spring greens">Greens</option>
-<option value="spring lamb">Lamb</option>
-<option value="spring onion">Onion</option>
-<option value="strawberry">Strawberry</option>
-<option value="swede">Swede</option>
-<option value="sweet potato">Potato</option>
-<option value="sweetcorn">Sweetcorn</option>
-<option value="swiss chard">Chard</option>
-<option value="tayberry">Tayberry</option>
-<option value="tomato">Tomato</option>
-<option value="tuna">Tuna</option>
-<option value="turkey">Turkey</option>
-<option value="turnip">Turnip</option>
-<option value="venison">Venison</option>
-<option value="watercress">Watercress</option>
-<option value="watermelon">Watermelon</option>
-<option value="whiting">Whiting</option>
-
-    </select>
-            </td>
-        </tr>
-        <tr><td><br></td></tr>
-        <tr>
-        <td colspan="2" align="center"><button type="submit" value="Submit">Get recipes</button></td>
-        </tr>
-
-
-    </table>
+    <tr>
+        <td class="heading" colspan="2"> <h3>And your prefered ingredients</h3> </td>
+    </tr>
+    <tr>
+        <td>
+            <select name="pref1">
+            <option value="none">None</option>
+                <option value="apple">Apple</option>
+                <option value="apricot">Apricot</option>
+                <option value="asparagus">Asparagus</option>
+                <option value="aubergine">Aubergine</option>
+                <option value="banana">Banana</option>
+                <option value="basil">Basil</option>
+                <option value="beef">Beef</option>
+                <option value="beetroot">Beetroot</option>
+                <option value="blackberry">Blackberry</option>
+                <option value="blackcurrants">Blackcurrants</option>
+                <option value="bramley apple">Apple</option>
+                <option value="broad bean">Bean</option>
+                <option value="broccoli">Broccoli</option>
+                <option value="brussels sprouts">Sprouts</option>
+                <option value="cabbage">Cabbage</option>
+                <option value="carrot">Carrot</option>
+                <option value="cauliflower">Cauliflower</option>
+                <option value="cavolo nero">Nero</option>
+                <option value="celeriac">Celeriac</option>
+                <option value="celery">Celery</option>
+                <option value="cherry">Cherry</option>
+                <option value="chervil">Chervil</option>
+                <option value="chestnut">Chestnut</option>
+                <option value="chicken">Chicken</option>
+                <option value="chicory">Chicory</option>
+                <option value="clementine">Clementine</option>
+                <option value="cod">Cod</option>
+                <option value="courgette">Courgette</option>
+                <option value="courgette flower">Flower</option>
+                <option value="crab">Crab</option>
+                <option value="crab apple">Apple</option>
+                <option value="cranberry">Cranberry</option>
+                <option value="damson">Damson</option>
+                <option value="date">Date</option>
+                <option value="duck">Duck</option>
+                <option value="elderberries">Elderberries</option>
+                <option value="fennel bulb">Bulb</option>
+                <option value="fig">Fig</option>
+                <option value="garlic">Garlic</option>
+                <option value="globe artichoke">Artichoke</option>
+                <option value="goose">Goose</option>
+                <option value="gooseberry">Gooseberry</option>
+                <option value="grapefruit">Grapefruit</option>
+                <option value="grouse">Grouse</option>
+                <option value="guinea fowl">Fowl</option>
+                <option value="halibut">Halibut</option>
+                <option value="jerusalem artichoke">Artichoke</option>
+                <option value="kale">Kale</option>
+                <option value="kipper">Kipper</option>
+                <option value="kohlrabi">Kohlrabi</option>
+                <option value="lamb">Lamb</option>
+                <option value="lamb's lettuce">Lettuce</option>
+                <option value="leek">Leek</option>
+                <option value="lemon">Lemon</option>
+                <option value="lettuce">Lettuce</option>
+                <option value="loganberry">Loganberry</option>
+                <option value="mackerel">Mackerel</option>
+                <option value="mangetout">Mangetout</option>
+                <option value="marrow">Marrow</option>
+                <option value="mint">Mint</option>
+                <option value="mussels">Mussels</option>
+                <option value="nectarine">Nectarine</option>
+                <option value="new potatoes">Potatoes</option>
+                <option value="onion">Onion</option>
+                <option value="orange">Orange</option>
+                <option value="oyster">Oyster</option>
+                <option value="pak choi">Choi</option>
+                <option value="parsnip">Parsnip</option>
+                <option value="peach">Peach</option>
+                <option value="pear">Pear</option>
+                <option value="peas">Peas</option>
+                <option value="pepper">Pepper</option>
+                <option value="plum">Plum</option>
+                <option value="pomegranate">Pomegranate</option>
+                <option value="pork">Pork</option>
+                <option value="potato">Potato</option>
+                <option value="pumpkin">Pumpkin</option>
+                <option value="purple sprouting broccoli">Broccoli</option>
+                <option value="quince">Quince</option>
+                <option value="radicchio">Radicchio</option>
+                <option value="radish">Radish</option>
+                <option value="raspberry">Raspberry</option>
+                <option value="redcurrant">Redcurrant</option>
+                <option value="rhubarb">Rhubarb</option>
+                <option value="runner bean">Bean</option>
+                <option value="salmon">Salmon</option>
+                <option value="salsify">Salsify</option>
+                <option value="samphire">Samphire</option>
+                <option value="sorrel">Sorrel</option>
+                <option value="spinach">Spinach</option>
+                <option value="spring greens">Greens</option>
+                <option value="spring lamb">Lamb</option>
+                <option value="spring onion">Onion</option>
+                <option value="strawberry">Strawberry</option>
+                <option value="swede">Swede</option>
+                <option value="sweet potato">Potato</option>
+                <option value="sweetcorn">Sweetcorn</option>
+                <option value="swiss chard">Chard</option>
+                <option value="tayberry">Tayberry</option>
+                <option value="tomato">Tomato</option>
+                <option value="tuna">Tuna</option>
+                <option value="turkey">Turkey</option>
+                <option value="turnip">Turnip</option>
+                <option value="venison">Venison</option>
+                <option value="watercress">Watercress</option>
+                <option value="watermelon">Watermelon</option>
+                <option value="whiting">Whiting</option>
+            </select>
+        </td>
+        <td>
+            <select name="pref2">
+            <option value="none">None</option>
+                <option value="apple">Apple</option>
+                <option value="apricot">Apricot</option>
+                <option value="asparagus">Asparagus</option>
+                <option value="aubergine">Aubergine</option>
+                <option value="banana">Banana</option>
+                <option value="basil">Basil</option>
+                <option value="beef">Beef</option>
+                <option value="beetroot">Beetroot</option>
+                <option value="blackberry">Blackberry</option>
+                <option value="blackcurrants">Blackcurrants</option>
+                <option value="bramley apple">Apple</option>
+                <option value="broad bean">Bean</option>
+                <option value="broccoli">Broccoli</option>
+                <option value="brussels sprouts">Sprouts</option>
+                <option value="cabbage">Cabbage</option>
+                <option value="carrot">Carrot</option>
+                <option value="cauliflower">Cauliflower</option>
+                <option value="cavolo nero">Nero</option>
+                <option value="celeriac">Celeriac</option>
+                <option value="celery">Celery</option>
+                <option value="cherry">Cherry</option>
+                <option value="chervil">Chervil</option>
+                <option value="chestnut">Chestnut</option>
+                <option value="chicken">Chicken</option>
+                <option value="chicory">Chicory</option>
+                <option value="clementine">Clementine</option>
+                <option value="cod">Cod</option>
+                <option value="courgette">Courgette</option>
+                <option value="courgette flower">Flower</option>
+                <option value="crab">Crab</option>
+                <option value="crab apple">Apple</option>
+                <option value="cranberry">Cranberry</option>
+                <option value="damson">Damson</option>
+                <option value="date">Date</option>
+                <option value="duck">Duck</option>
+                <option value="elderberries">Elderberries</option>
+                <option value="fennel bulb">Bulb</option>
+                <option value="fig">Fig</option>
+                <option value="garlic">Garlic</option>
+                <option value="globe artichoke">Artichoke</option>
+                <option value="goose">Goose</option>
+                <option value="gooseberry">Gooseberry</option>
+                <option value="grapefruit">Grapefruit</option>
+                <option value="grouse">Grouse</option>
+                <option value="guinea fowl">Fowl</option>
+                <option value="halibut">Halibut</option>
+                <option value="jerusalem artichoke">Artichoke</option>
+                <option value="kale">Kale</option>
+                <option value="kipper">Kipper</option>
+                <option value="kohlrabi">Kohlrabi</option>
+                <option value="lamb">Lamb</option>
+                <option value="lamb's lettuce">Lettuce</option>
+                <option value="leek">Leek</option>
+                <option value="lemon">Lemon</option>
+                <option value="lettuce">Lettuce</option>
+                <option value="loganberry">Loganberry</option>
+                <option value="mackerel">Mackerel</option>
+                <option value="mangetout">Mangetout</option>
+                <option value="marrow">Marrow</option>
+                <option value="mint">Mint</option>
+                <option value="mussels">Mussels</option>
+                <option value="nectarine">Nectarine</option>
+                <option value="new potatoes">Potatoes</option>
+                <option value="onion">Onion</option>
+                <option value="orange">Orange</option>
+                <option value="oyster">Oyster</option>
+                <option value="pak choi">Choi</option>
+                <option value="parsnip">Parsnip</option>
+                <option value="peach">Peach</option>
+                <option value="pear">Pear</option>
+                <option value="peas">Peas</option>
+                <option value="pepper">Pepper</option>
+                <option value="plum">Plum</option>
+                <option value="pomegranate">Pomegranate</option>
+                <option value="pork">Pork</option>
+                <option value="potato">Potato</option>
+                <option value="pumpkin">Pumpkin</option>
+                <option value="purple sprouting broccoli">Broccoli</option>
+                <option value="quince">Quince</option>
+                <option value="radicchio">Radicchio</option>
+                <option value="radish">Radish</option>
+                <option value="raspberry">Raspberry</option>
+                <option value="redcurrant">Redcurrant</option>
+                <option value="rhubarb">Rhubarb</option>
+                <option value="runner bean">Bean</option>
+                <option value="salmon">Salmon</option>
+                <option value="salsify">Salsify</option>
+                <option value="samphire">Samphire</option>
+                <option value="sorrel">Sorrel</option>
+                <option value="spinach">Spinach</option>
+                <option value="spring greens">Greens</option>
+                <option value="spring lamb">Lamb</option>
+                <option value="spring onion">Onion</option>
+                <option value="strawberry">Strawberry</option>
+                <option value="swede">Swede</option>
+                <option value="sweet potato">Potato</option>
+                <option value="sweetcorn">Sweetcorn</option>
+                <option value="swiss chard">Chard</option>
+                <option value="tayberry">Tayberry</option>
+                <option value="tomato">Tomato</option>
+                <option value="tuna">Tuna</option>
+                <option value="turkey">Turkey</option>
+                <option value="turnip">Turnip</option>
+                <option value="venison">Venison</option>
+                <option value="watercress">Watercress</option>
+                <option value="watermelon">Watermelon</option>
+                <option value="whiting">Whiting</option>
+            </select>
+        </td>   
+    </tr>
+    <tr>
+        <td>
+            <select name="pref3">
+            <option value="none">None</option>
+                <option value="apple">Apple</option>
+                <option value="apricot">Apricot</option>
+                <option value="asparagus">Asparagus</option>
+                <option value="aubergine">Aubergine</option>
+                <option value="banana">Banana</option>
+                <option value="basil">Basil</option>
+                <option value="beef">Beef</option>
+                <option value="beetroot">Beetroot</option>
+                <option value="blackberry">Blackberry</option>
+                <option value="blackcurrants">Blackcurrants</option>
+                <option value="bramley apple">Apple</option>
+                <option value="broad bean">Bean</option>
+                <option value="broccoli">Broccoli</option>
+                <option value="brussels sprouts">Sprouts</option>
+                <option value="cabbage">Cabbage</option>
+                <option value="carrot">Carrot</option>
+                <option value="cauliflower">Cauliflower</option>
+                <option value="cavolo nero">Nero</option>
+                <option value="celeriac">Celeriac</option>
+                <option value="celery">Celery</option>
+                <option value="cherry">Cherry</option>
+                <option value="chervil">Chervil</option>
+                <option value="chestnut">Chestnut</option>
+                <option value="chicken">Chicken</option>
+                <option value="chicory">Chicory</option>
+                <option value="clementine">Clementine</option>
+                <option value="cod">Cod</option>
+                <option value="courgette">Courgette</option>
+                <option value="courgette flower">Flower</option>
+                <option value="crab">Crab</option>
+                <option value="crab apple">Apple</option>
+                <option value="cranberry">Cranberry</option>
+                <option value="damson">Damson</option>
+                <option value="date">Date</option>
+                <option value="duck">Duck</option>
+                <option value="elderberries">Elderberries</option>
+                <option value="fennel bulb">Bulb</option>
+                <option value="fig">Fig</option>
+                <option value="garlic">Garlic</option>
+                <option value="globe artichoke">Artichoke</option>
+                <option value="goose">Goose</option>
+                <option value="gooseberry">Gooseberry</option>
+                <option value="grapefruit">Grapefruit</option>
+                <option value="grouse">Grouse</option>
+                <option value="guinea fowl">Fowl</option>
+                <option value="halibut">Halibut</option>
+                <option value="jerusalem artichoke">Artichoke</option>
+                <option value="kale">Kale</option>
+                <option value="kipper">Kipper</option>
+                <option value="kohlrabi">Kohlrabi</option>
+                <option value="lamb">Lamb</option>
+                <option value="lamb's lettuce">Lettuce</option>
+                <option value="leek">Leek</option>
+                <option value="lemon">Lemon</option>
+                <option value="lettuce">Lettuce</option>
+                <option value="loganberry">Loganberry</option>
+                <option value="mackerel">Mackerel</option>
+                <option value="mangetout">Mangetout</option>
+                <option value="marrow">Marrow</option>
+                <option value="mint">Mint</option>
+                <option value="mussels">Mussels</option>
+                <option value="nectarine">Nectarine</option>
+                <option value="new potatoes">Potatoes</option>
+                <option value="onion">Onion</option>
+                <option value="orange">Orange</option>
+                <option value="oyster">Oyster</option>
+                <option value="pak choi">Choi</option>
+                <option value="parsnip">Parsnip</option>
+                <option value="peach">Peach</option>
+                <option value="pear">Pear</option>
+                <option value="peas">Peas</option>
+                <option value="pepper">Pepper</option>
+                <option value="plum">Plum</option>
+                <option value="pomegranate">Pomegranate</option>
+                <option value="pork">Pork</option>
+                <option value="potato">Potato</option>
+                <option value="pumpkin">Pumpkin</option>
+                <option value="purple sprouting broccoli">Broccoli</option>
+                <option value="quince">Quince</option>
+                <option value="radicchio">Radicchio</option>
+                <option value="radish">Radish</option>
+                <option value="raspberry">Raspberry</option>
+                <option value="redcurrant">Redcurrant</option>
+                <option value="rhubarb">Rhubarb</option>
+                <option value="runner bean">Bean</option>
+                <option value="salmon">Salmon</option>
+                <option value="salsify">Salsify</option>
+                <option value="samphire">Samphire</option>
+                <option value="sorrel">Sorrel</option>
+                <option value="spinach">Spinach</option>
+                <option value="spring greens">Greens</option>
+                <option value="spring lamb">Lamb</option>
+                <option value="spring onion">Onion</option>
+                <option value="strawberry">Strawberry</option>
+                <option value="swede">Swede</option>
+                <option value="sweet potato">Potato</option>
+                <option value="sweetcorn">Sweetcorn</option>
+                <option value="swiss chard">Chard</option>
+                <option value="tayberry">Tayberry</option>
+                <option value="tomato">Tomato</option>
+                <option value="tuna">Tuna</option>
+                <option value="turkey">Turkey</option>
+                <option value="turnip">Turnip</option>
+                <option value="venison">Venison</option>
+                <option value="watercress">Watercress</option>
+                <option value="watermelon">Watermelon</option>
+                <option value="whiting">Whiting</option>
+            </select>
+        </td>
+        <td>
+            <select name="pref4">
+            <option value="none">None</option>
+                <option value="apple">Apple</option>
+                <option value="apricot">Apricot</option>
+                <option value="asparagus">Asparagus</option>
+                <option value="aubergine">Aubergine</option>
+                <option value="banana">Banana</option>
+                <option value="basil">Basil</option>
+                <option value="beef">Beef</option>
+                <option value="beetroot">Beetroot</option>
+                <option value="blackberry">Blackberry</option>
+                <option value="blackcurrants">Blackcurrants</option>
+                <option value="bramley apple">Apple</option>
+                <option value="broad bean">Bean</option>
+                <option value="broccoli">Broccoli</option>
+                <option value="brussels sprouts">Sprouts</option>
+                <option value="cabbage">Cabbage</option>
+                <option value="carrot">Carrot</option>
+                <option value="cauliflower">Cauliflower</option>
+                <option value="cavolo nero">Nero</option>
+                <option value="celeriac">Celeriac</option>
+                <option value="celery">Celery</option>
+                <option value="cherry">Cherry</option>
+                <option value="chervil">Chervil</option>
+                <option value="chestnut">Chestnut</option>
+                <option value="chicken">Chicken</option>
+                <option value="chicory">Chicory</option>
+                <option value="clementine">Clementine</option>
+                <option value="cod">Cod</option>
+                <option value="courgette">Courgette</option>
+                <option value="courgette flower">Flower</option>
+                <option value="crab">Crab</option>
+                <option value="crab apple">Apple</option>
+                <option value="cranberry">Cranberry</option>
+                <option value="damson">Damson</option>
+                <option value="date">Date</option>
+                <option value="duck">Duck</option>
+                <option value="elderberries">Elderberries</option>
+                <option value="fennel bulb">Bulb</option>
+                <option value="fig">Fig</option>
+                <option value="garlic">Garlic</option>
+                <option value="globe artichoke">Artichoke</option>
+                <option value="goose">Goose</option>
+                <option value="gooseberry">Gooseberry</option>
+                <option value="grapefruit">Grapefruit</option>
+                <option value="grouse">Grouse</option>
+                <option value="guinea fowl">Fowl</option>
+                <option value="halibut">Halibut</option>
+                <option value="jerusalem artichoke">Artichoke</option>
+                <option value="kale">Kale</option>
+                <option value="kipper">Kipper</option>
+                <option value="kohlrabi">Kohlrabi</option>
+                <option value="lamb">Lamb</option>
+                <option value="lamb's lettuce">Lettuce</option>
+                <option value="leek">Leek</option>
+                <option value="lemon">Lemon</option>
+                <option value="lettuce">Lettuce</option>
+                <option value="loganberry">Loganberry</option>
+                <option value="mackerel">Mackerel</option>
+                <option value="mangetout">Mangetout</option>
+                <option value="marrow">Marrow</option>
+                <option value="mint">Mint</option>
+                <option value="mussels">Mussels</option>
+                <option value="nectarine">Nectarine</option>
+                <option value="new potatoes">Potatoes</option>
+                <option value="onion">Onion</option>
+                <option value="orange">Orange</option>
+                <option value="oyster">Oyster</option>
+                <option value="pak choi">Choi</option>
+                <option value="parsnip">Parsnip</option>
+                <option value="peach">Peach</option>
+                <option value="pear">Pear</option>
+                <option value="peas">Peas</option>
+                <option value="pepper">Pepper</option>
+                <option value="plum">Plum</option>
+                <option value="pomegranate">Pomegranate</option>
+                <option value="pork">Pork</option>
+                <option value="potato">Potato</option>
+                <option value="pumpkin">Pumpkin</option>
+                <option value="purple sprouting broccoli">Broccoli</option>
+                <option value="quince">Quince</option>
+                <option value="radicchio">Radicchio</option>
+                <option value="radish">Radish</option>
+                <option value="raspberry">Raspberry</option>
+                <option value="redcurrant">Redcurrant</option>
+                <option value="rhubarb">Rhubarb</option>
+                <option value="runner bean">Bean</option>
+                <option value="salmon">Salmon</option>
+                <option value="salsify">Salsify</option>
+                <option value="samphire">Samphire</option>
+                <option value="sorrel">Sorrel</option>
+                <option value="spinach">Spinach</option>
+                <option value="spring greens">Greens</option>
+                <option value="spring lamb">Lamb</option>
+                <option value="spring onion">Onion</option>
+                <option value="strawberry">Strawberry</option>
+                <option value="swede">Swede</option>
+                <option value="sweet potato">Potato</option>
+                <option value="sweetcorn">Sweetcorn</option>
+                <option value="swiss chard">Chard</option>
+                <option value="tayberry">Tayberry</option>
+                <option value="tomato">Tomato</option>
+                <option value="tuna">Tuna</option>
+                <option value="turkey">Turkey</option>
+                <option value="turnip">Turnip</option>
+                <option value="venison">Venison</option>
+                <option value="watercress">Watercress</option>
+                <option value="watermelon">Watermelon</option>
+                <option value="whiting">Whiting</option>
+            </select>
+        </td>   
+    </tr>        
+    <tr>
+        <td colspan="2"><button type="submit" value="Submit">Get recipes</button></td>
+    </tr>
+</tbody></table>
 </form>
+
 </body>
 </html>

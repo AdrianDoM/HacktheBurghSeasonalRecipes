@@ -25,9 +25,9 @@ def getBest(month, pref1=None, pref2=None):
                         if ing in ingredient:
                             score += scr
                     if pref1 and pref1 in ingredient:
-                        score += 3
+                        score += 6
                     if pref2 and pref2 in ingredient:
-                        score += 3
+                        score += 6
                     cat = categories[ingredient]
                     footprint += carbon[cat]
             score -= footprint/6
