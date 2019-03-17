@@ -127,10 +127,6 @@ def titles():
                 mystr = mystr + str(i) + ','
         return mystr
 
-@app.route('/set')
-def set_recipe():
-    
-
 def getRecipe(num):
         i = num
         currRecp = []
