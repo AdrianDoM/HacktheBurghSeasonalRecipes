@@ -60,6 +60,34 @@ def get5recipes(month, pref1, pref2):
 		bestrecipes += [currRecp]
 	return (bestrecipes)
 
+@app.route('/recipes', methods=['GET', 'POST'])
+def helloworld():
+	#for simon
+	# preferencesform = request.args
+	#before
+	#preferencesform = request.form
+	#for i in preferencesform.keys():
+	#	print(i)
+
+	#preference = []
+	#for i in preferencesform:
+	#	preference += [preferencesform.get(i)]
+	#preference += request.args.get('pref1')
+	#preference += request.args.get('pref2')
+	#preference += request.args.get('pref3')
+	#preference += request.args.get('pref4')
+	#print(preference)
+	#before
+	#if preferencesform['month'] == 'Current':
+	#	month = calendar.month_abbr[datetime.datetime.now().month]
+	#else:
+	#	month = preferencesform['month']
+	#print(month, preferencesform['pref1'], preferencesform['pref2'])
+	#a = get5recipes(month, preferencesform['pref1'], preferencesform['pref2'])
+	#simon
+	a = getRecipe(int(request.args.get('index')))
+	#let a be list of recipes
+	return render_template('results.html', recipes=a)
 
 @app.route('/results', methods=['GET', 'POST'])
 def helloworld():
