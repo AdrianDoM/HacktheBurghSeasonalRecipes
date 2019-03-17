@@ -10,10 +10,10 @@
                     <Label text="Navigation Menu"></Label>
                 </StackLayout>
                 <StackLayout>
-                    <Label text="Home" padding="10" (tap)="onHomeTap()"></Label>
+                    <Label text="Home" padding="10" backgroundColor="lightgray" (tap)="onHomeTap()"></Label>
                     <Label text="Browse Recipes" padding="10" (tap)="onBrowseRecipeTap()"></Label>
                     <Label text="Footprint" padding="10" (tap)="onFootprintTap()"></Label>
-                    <Label text="Settings" backgroundColor="lightgray"
+                    <Label text="Settings"
                         padding="10" (tap)="onSettingsTap()"></Label>
                     <Label text="Logout" padding="10" (tap)="onLogoutTap()"></Label>
                 </StackLayout>
@@ -25,6 +25,7 @@
             <ScrollView class="page">
                 <StackLayout class="home-panel">
                     <!--Add your page content here-->
+
 					<WebView height="1200px" src="https://guarded-sierra-88939.herokuapp.com/results-get?month=Mar"></WebView>
                 </StackLayout>
             </ScrollView>
