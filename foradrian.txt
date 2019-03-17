@@ -1,0 +1,107 @@
+apple
+apricot
+asparagus
+aubergine
+banana
+basil
+beef
+beetroot
+blackberry
+blackcurrants
+bramley apple
+broad bean
+broccoli
+brussels sprouts
+cabbage
+carrot
+cauliflower
+cavolo nero
+celeriac
+celery
+cherry
+chervil
+chestnut
+chicken
+chicory
+clementine
+cod
+courgette
+courgette flower
+crab
+crab apple
+cranberry
+damson
+date
+duck
+elderberries
+fennel bulb
+fig
+garlic
+globe artichoke
+goose
+gooseberry
+grapefruit
+grouse
+guinea fowl
+halibut
+jerusalem artichoke
+kale
+kipper
+kohlrabi
+lamb
+lamb's lettuce
+leek
+lemon
+lettuce
+loganberry
+mackerel
+mangetout
+marrow
+mint
+mussels
+nectarine
+new potatoes
+onion
+orange
+oyster
+pak choi
+parsnip
+peach
+pear
+peas
+pepper
+plum
+pomegranate
+pork
+potato
+pumpkin
+purple sprouting broccoli
+quince
+radicchio
+radish
+raspberry
+redcurrant
+rhubarb
+runner bean
+salmon
+salsify
+samphire
+sorrel
+spinach
+spring greens
+spring lamb
+spring onion
+strawberry
+swede
+sweet potato
+sweetcorn
+swiss chard
+tayberry
+tomato
+tuna
+turkey
+turnip
+venison
+watercress
+watermelon
+whiting
