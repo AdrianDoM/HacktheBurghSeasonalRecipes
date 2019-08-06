@@ -10,7 +10,7 @@ import { Router } from "@angular/router";
     styleUrls: ["./settings.component.css"]
 })
 export class SettingsComponent implements OnInit {
-    @ViewChild(RadSideDrawerComponent) public drawerComponent: RadSideDrawerComponent;
+    @ViewChild(RadSideDrawerComponent, { read: true, static: false }) public drawerComponent: RadSideDrawerComponent;
     mainContentText: string = "SideDrawer for NativeScript can be easily setup in the XML definition of your page by defining main- and drawer-content. The component"
         + " has a default transition and position and also exposes notifications related to changes in its state. Swipe from left to open side drawer.";
     onOpenDrawerTap() {

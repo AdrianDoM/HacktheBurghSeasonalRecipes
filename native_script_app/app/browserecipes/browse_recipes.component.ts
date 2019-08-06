@@ -105,7 +105,7 @@ export class BrowseRecipesComponent implements OnInit {
              });
          this.router.navigate(['web']);
     }
-    @ViewChild(RadSideDrawerComponent) public drawerComponent: RadSideDrawerComponent;
+    @ViewChild(RadSideDrawerComponent, { read: true, static: false }) public drawerComponent: RadSideDrawerComponent;
     mainContentText: string = "SideDrawer for NativeScript can be easily setup in the XML definition of your page by defining main- and drawer-content. The component"
         + " has a default transition and position and also exposes notifications related to changes in its state. Swipe from left to open side drawer.";
     onOpenDrawerTap() {
@@ -137,7 +137,7 @@ export class BrowseRecipesComponent implements OnInit {
 
     constructor(private router: Router) {
         request({
-            url: "https://guarded-sierra-88939.herokuapp.com/titles",
+            url: "https://ai-recipe-recommender.herokuapp.com/titles",
             method: "GET"
         }).then((response) => {
             // Content property of the response is HttpContent

@@ -18,7 +18,7 @@ export class FootprintComponent implements OnInit {
         { Country: "May", Amount: 18, SecondVal: 8, ThirdVal: 21 }
     ];
 
-    @ViewChild(RadSideDrawerComponent) public drawerComponent: RadSideDrawerComponent;
+    @ViewChild(RadSideDrawerComponent, { read: true, static: false }) public drawerComponent: RadSideDrawerComponent;
     mainContentText: string = "SideDrawer for NativeScript can be easily setup in the XML definition of your page by defining main- and drawer-content. The component"
         + " has a default transition and position and also exposes notifications related to changes in its state. Swipe from left to open side drawer.";
     onOpenDrawerTap() {

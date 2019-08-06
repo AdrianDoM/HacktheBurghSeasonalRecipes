@@ -23,7 +23,7 @@ import { DataService } from "../data.service";
 })
 export class WebComponent implements OnInit {
 
-	@ViewChild("myWebView") webViewRef: WebView;
+	@ViewChild("myWebView", { read: true, static: false }) webViewRef: WebView;
 	public webViewSrc: string = "https://docs.nativescript.org/";
 	constructor() {
 	}
@@ -40,7 +40,7 @@ export class WebComponent implements OnInit {
 			// Content property of the response is HttpContent
 			// The toString method allows you to get the response body as string.
 			var str = response.content.toString();
-			this.webViewSrc = 'https://guarded-sierra-88939.herokuapp.com/recipes?index=' + str;
+			this.webViewSrc = 'https://ai-recipe-recommender.herokuapp.com/recipes?index=' + str;
 			console.log(this.webViewSrc);
 			//this.webViewRef.reload();
 			// The toJSON method allows you to parse the received content to JSON object
